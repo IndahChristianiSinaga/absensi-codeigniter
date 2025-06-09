@@ -13,7 +13,7 @@ switch ($type) {
             <p>Kelas : <b><?= $data['kelas']  . ' ' . $data['jurusan']; ?></b></p>
          </div>
          <div class="col">
-            <?= jam($presensi); ?>
+            <?= jam($presensi, $waktu); ?>
          </div>
       </div>
    <?php break;
@@ -28,7 +28,7 @@ switch ($type) {
             <p>No HP : <b><?= $data['no_hp']; ?></b></p>
          </div>
          <div class="col">
-            <?= jam($presensi); ?>
+            <?= jam($presensi, $waktu); ?>
          </div>
       </div>
    <?php break;
@@ -40,12 +40,39 @@ switch ($type) {
       break;
 }
 
-function jam($presensi)
+function jam($presensi, $waktu)
 {
-   ?>
-   <p>Jam masuk : <b class="text-info"><?= $presensi['jam_masuk'] ?? '-'; ?></b></p>
-   <p>Jam pulang : <b class="text-info"><?= $presensi['jam_keluar'] ?? '-'; ?></b></p>
-<?php
-}
+   $jamMasuk  = $presensi['jam_masuk'] ?? null;
+   $jamPulang = $presensi['jam_keluar'] ?? null;
+   $jamIdeal  = "07:00:00";
 
+   $status = "-";
+
+   if ($waktu === 'masuk' && $jamMasuk) {
+      $masuk = strtotime($jamMasuk);
+      $ideal = strtotime($jamIdeal);
+      if ($masuk > $ideal) {
+         $selisihMenit = round(($masuk - $ideal) / 60);
+         $status = "Terlambat {$selisihMenit} menit";
+      } else {
+         $status = "Tepat Waktu";
+      }
+   }
+
+   // Mulai tangkap output ke dalam variabel
+   ob_start();
+   ?>
+   <p>Jam masuk : <b class="text-info"><?= $jamMasuk ?? '-' ?></b></p>
+   <p>Jam pulang : <b class="text-info"><?= $jamPulang ?? '-' ?></b></p>
+   <?php if ($waktu === 'masuk'): ?>
+      <p>Status masuk :
+         <b class="<?= ($status === 'Tepat Waktu') ? 'text-success' : 'text-danger' ?>">
+            <?= $status ?>
+         </b>
+      </p>
+   <?php endif; ?>
+   <?php
+   // Ambil isi output dan kembalikan sebagai string
+   return ob_get_clean();
+}
 ?>

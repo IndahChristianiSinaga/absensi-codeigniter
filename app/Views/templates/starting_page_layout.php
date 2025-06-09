@@ -55,7 +55,7 @@
 
    .btn.btn-primary,
    .btn-primary {
-      background-color: #8e24aa !important;
+      background-color: #009C4D !important;
       border-color: #009C4D !important;
       color: #fff !important;
    }
