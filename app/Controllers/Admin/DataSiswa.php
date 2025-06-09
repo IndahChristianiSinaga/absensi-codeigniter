@@ -17,7 +17,7 @@ class DataSiswa extends BaseController
 
    protected $siswaValidationRules = [
       'nis' => [
-         'rules' => 'required|max_length[20]|min_length[4]',
+         'rules' => 'required|max_length[20]|min_length[4]|is_unique[tb_siswa.nis]',
          'errors' => [
             'required' => 'NIS harus diisi.',
             'is_unique' => 'NIS ini telah terdaftar.',

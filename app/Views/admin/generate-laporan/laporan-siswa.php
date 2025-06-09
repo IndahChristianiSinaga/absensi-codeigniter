@@ -3,14 +3,14 @@
 <?= $this->section('content') ?>
 <table>
    <tr>
-      <td><img src="<?= getLogo(); ?>" width="100px" height="100px"></img></td>
+       <td><img src="<?= base_url('assets/img/kemdikbud.jpg'); ?>" width="100px" height="100px" style="object-fit: contain;"></td>
       <td width="100%">
          <h2 align="center">DAFTAR HADIR SISWA</h2>
          <h4 align="center"><?= $generalSettings->school_name; ?></h4>
          <h4 align="center">TAHUN PELAJARAN <?= $generalSettings->school_year; ?></h4>
       </td>
-      <td>
-         <div style="width:100px"></div>
+     <td align="right" width="100px">
+         <img src="<?= getLogo(); ?>" width="100px" height="100px">
       </td>
    </tr>
 </table>

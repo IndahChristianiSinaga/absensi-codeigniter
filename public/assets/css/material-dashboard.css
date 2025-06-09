@@ -157,14 +157,14 @@ sup {
 }
 
 a {
-  color: #9c27b0;
+  color: #009c4d;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #0a6ebd;
+  color: #ffc107;
   text-decoration: underline;
 }
 
@@ -577,14 +577,14 @@ sup {
 }
 
 a {
-  color: #9c27b0;
+  color: #009c4d;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #0a6ebd;
+  color: #ffc107;
   text-decoration: underline;
 }
 
@@ -18557,7 +18557,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-  background: linear-gradient(60deg, #ab47bc, #8e24aa);
+  background: linear-gradient(60deg, #00353b, #00353b);
 }
 
 .card .card-header-info .card-icon,

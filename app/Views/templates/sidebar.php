@@ -20,7 +20,7 @@ switch ($context) {
       break;
 }
 ?>
-<div class="sidebar" data-color="<?= $sidebarColor; ?>" data-background-color="black" data-image="<?= base_url('assets/img/sidebar/sidebar-1.jpg'); ?>">
+<div class="sidebar" data-color="<?= $sidebarColor; ?>" data-background-color="white" data-image="<?= base_url('assets/img/logo_sekolah.jpg'); ?>">
    <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -28,7 +28,7 @@ switch ($context) {
     -->
    <div class="logo">
       <a class="simple-text logo-normal">
-         <b>Operator<br>Petugas Absensi</b>
+         <b>Operator<br>Absensi SiAmanah</b>
       </a>
    </div>
    <div class="sidebar-wrapper">

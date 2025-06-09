@@ -6,7 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <?= $this->include('templates/css'); ?>
-   <title>Absensi QR Code</title>
+   <title>Absensi SiAmanah</title>
    <style>
       .bg {
          background: url(<?= base_url('assets/img/bg2.jpg'); ?>) center;
@@ -48,6 +48,18 @@
       .form-select {
          min-width: 200px;
       }
+      /* TAMBAHKAN INI DI BAWAHNYA 👇 */
+   .card-header.card-header-primary {
+      background-color: #009C4D !important;
+   }
+
+   .btn.btn-primary,
+   .btn-primary {
+      background-color: #8e24aa !important;
+      border-color: #009C4D !important;
+      color: #fff !important;
+   }
+
    </style>
 </head>
 
@@ -58,7 +70,7 @@
       <div class="container-fluid">
          <div class="navbar-wrapper row w-100">
             <div class="col-6">
-               <p class="navbar-brand"><b><?= $title ?? 'Login'; ?></b></p>
+              <!-- <p class="navbar-brand"><b><?= $title ?? 'Login'; ?></b></p>-->
             </div>
             <div class="col-6 d-flex justify-content-end">
                <?= $this->renderSection('navaction') ?>
